@@ -3,6 +3,8 @@ const INITIAL_STATE = {
   expenses: [],
   editor: false,
   idToEdit: 0,
+  totalExpenses: 0,
+  currency: '',
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
