@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import getCurrencies from '../services/api';
-import walletReducer from '../redux/reducers/wallet';
 import { currenciesAction } from '../redux/actions';
 
 class WalletForm extends Component {
