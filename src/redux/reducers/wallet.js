@@ -1,4 +1,4 @@
-import { CURRENCIES } from '../actions';
+import { ADD_EXPENSES, CURRENCIES } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [],
@@ -15,6 +15,19 @@ const walletReducer = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       currencies: action.payload,
+    };
+  }
+  case ADD_EXPENSES: {
+    const exchangeRatesValues = Object.values(action.payload[0].exchangeRates);
+    const exchangeFiltered = exchangeRatesValues
+      .filter((e) => e.code === action.payload[0].currency);
+    const { ask } = exchangeFiltered[0];
+    const calcTotalExpenses = +(state.totalExpenses)
+    + (+(action.payload[0].value) * (ask));
+    return {
+      ...state,
+      expenses: state.expenses.concat(action.payload),
+      totalExpenses: calcTotalExpenses.toFixed(2),
     };
   }
   default: return state;

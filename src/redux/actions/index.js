@@ -7,11 +7,14 @@ export const userEmail = (email) => ({
 
 export const CURRENCIES = 'CURRENCIES';
 
-export const currenciesAction = (curr) => {
-  console.log('curr', curr);
-  return {
+export const currenciesAction = (curr) => ({
+  type: CURRENCIES,
+  payload: curr,
+});
 
-    type: CURRENCIES,
-    payload: curr,
-  };
-};
+export const ADD_EXPENSES = 'ADD_EXPENSES';
+
+export const addExpenses = (arr) => ({
+  type: ADD_EXPENSES,
+  payload: arr,
+});

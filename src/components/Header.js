@@ -9,8 +9,6 @@ class Header extends Component {
       <div>
         <p data-testid="email-field">{userEmail}</p>
         <p data-testid="total-field">
-          Despesa Total:
-          {' '}
           {userExpenses}
         </p>
         <p data-testid="header-currency-field">
