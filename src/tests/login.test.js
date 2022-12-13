@@ -21,7 +21,6 @@ describe('Verificar se na página login...', () => {
   });
   test('Ao clicar no botão é direcionado para a aplicação', () => {
     const { history } = renderWithRouterAndRedux(<App />);
-    console.log('history', history);
     const inputEmailEl = screen.getByTestId('email-input');
     const inputPasswordEl = screen.getByTestId('password-input');
     const inputButtonEl = screen.getByRole('button', { name: /entrar/i });
