@@ -20,7 +20,7 @@ const walletReducer = (state = INITIAL_STATE, action) => {
   case ADD_EXPENSES: {
     const exchangeRatesValues = Object.values(action.payload[0].exchangeRates);
     const exchangeFiltered = exchangeRatesValues
-      .filter((e) => e.code === action.payload[0].currency);
+      .filter((e) => e.codein === 'BRL' && e.code === action.payload[0].currency);
     const { ask } = exchangeFiltered[0];
     const calcTotalExpenses = +(state.totalExpenses)
     + (+(action.payload[0].value) * (ask));
