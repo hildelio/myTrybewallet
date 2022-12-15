@@ -5,10 +5,12 @@ import mockData from './helpers/mockData';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
 
 describe('Verificar se na página wallet...', () => {
+  const valueInput = 'value-input';
+  const descriptionInput = 'description-input';
   test('Se os inputs estão na tela', () => {
     renderWithRouterAndRedux(<Wallet />, '/carteira');
-    const inputValueEl = screen.getByTestId('value-input');
-    const inputDescriptionEl = screen.getByTestId('description-input');
+    const inputValueEl = screen.getByTestId(valueInput);
+    const inputDescriptionEl = screen.getByTestId(descriptionInput);
     const inputCurrencyEl = screen.getByTestId('currency-input');
     const inputMethodEl = screen.getByTestId('method-input');
     const inputTagEl = screen.getByTestId('tag-input');
@@ -27,8 +29,8 @@ describe('Verificar se na página wallet...', () => {
       json: jest.fn().mockResolvedValue(mockData),
     });
     renderWithRouterAndRedux(<Wallet />, '/carteira');
-    const inputValueEl = screen.getByTestId('value-input');
-    const inputDescriptionEl = screen.getByTestId('description-input');
+    const inputValueEl = screen.getByTestId(valueInput);
+    const inputDescriptionEl = screen.getByTestId(descriptionInput);
     const inputCurrencyEl = screen.getByTestId('currency-input');
     const inputMethodEl = screen.getByTestId('method-input');
     const inputTagEl = screen.getByTestId('tag-input');
@@ -66,8 +68,8 @@ describe('Verificar se na página wallet...', () => {
       json: jest.fn().mockResolvedValue(mockData),
     });
     renderWithRouterAndRedux(<Wallet />, '/carteira');
-    const inputValueEl = screen.getByTestId('value-input');
-    const inputDescriptionEl = screen.getByTestId('description-input');
+    const inputValueEl = screen.getByTestId(valueInput);
+    const inputDescriptionEl = screen.getByTestId(descriptionInput);
     const buttonEl = screen.getByRole('button', { name: /adicionar despesa/i });
 
     userEvent.type(inputValueEl, '100');
