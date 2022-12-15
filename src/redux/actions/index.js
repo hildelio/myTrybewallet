@@ -18,3 +18,10 @@ export const addExpenses = (arr) => ({
   type: ADD_EXPENSES,
   payload: arr,
 });
+
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
+
+export const deleteExpense = (id) => ({
+  type: DELETE_EXPENSE,
+  payload: id,
+});
