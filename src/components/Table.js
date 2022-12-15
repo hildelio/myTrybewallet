@@ -63,7 +63,12 @@ class Table extends Component {
                         <td>{(e.value * el.ask).toFixed(2)}</td>
                         <td>{el.name}</td>
                         <td>
-                          <button type="button">Editar</button>
+                          <button
+                            type="button"
+                            data-testid="edit-btn"
+                          >
+                            Editar
+                          </button>
                           <button
                             type="button"
                             data-testid="delete-btn"

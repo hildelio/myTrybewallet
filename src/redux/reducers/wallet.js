@@ -5,8 +5,6 @@ const INITIAL_STATE = {
   expenses: [],
   editor: false,
   idToEdit: 0,
-  totalExpenses: 0,
-  currency: '',
 };
 
 const walletReducer = (state = INITIAL_STATE, action) => {
@@ -18,16 +16,9 @@ const walletReducer = (state = INITIAL_STATE, action) => {
     };
   }
   case ADD_EXPENSES: {
-    const exchangeRatesValues = Object.values(action.payload[0].exchangeRates);
-    const exchangeFiltered = exchangeRatesValues
-      .filter((e) => e.codein === 'BRL' && e.code === action.payload[0].currency);
-    const { ask } = exchangeFiltered[0];
-    const calcTotalExpenses = +(state.totalExpenses)
-    + (+(action.payload[0].value) * (ask));
     return {
       ...state,
       expenses: state.expenses.concat(action.payload),
-      totalExpenses: calcTotalExpenses.toFixed(2),
     };
   }
   case DELETE_EXPENSE: {
