@@ -1,0 +1,42 @@
+.header-container {
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: -4px 9px 13px rgba(5, 18, 54, 0.4);
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: -38%;
+  padding: 5% 0% 15%;
+  position: relative;
+}
+
+.header-image {
+  height: 6vh;
+}
+
+.header-total-container {
+  align-items: center;
+  color: #003be5;
+  display: flex;
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 14px;
+}
+
+.header-total-icon {
+  height: 3.1vh;
+}
+
+.header-email-container {
+  align-items: center;
+  color: #2fc18c;
+  display: flex;
+  font-family: Epilogue, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 14px;
+}
