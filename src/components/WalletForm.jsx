@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import getCurrencies from '../services/api';
 import { addExpenses, currenciesAction, saveEditedExpense } from '../redux/actions';
+import '../css/walletForm.css';
 
 const ALIMENTACAO = 'Alimentação';
 class WalletForm extends Component {
@@ -82,14 +83,14 @@ class WalletForm extends Component {
     const { value, description, currency, method, tag } = this.state;
     const { currencies, editor } = this.props;
     return (
-      <form>
+      <form className="form-container">
         <label htmlFor="value-input">
           Valor:
           {' '}
           <input
             type="number"
             data-testid="value-input"
-            id="value-input"
+            className="value-input"
             value={ value }
             name="value"
             onChange={ this.handleChange }
@@ -101,7 +102,7 @@ class WalletForm extends Component {
           <input
             type="text"
             data-testid="description-input"
-            id="description-input"
+            className="description-input"
             value={ description }
             name="description"
             onChange={ this.handleChange }
@@ -112,7 +113,7 @@ class WalletForm extends Component {
           {' '}
           <select
             data-testid="currency-input"
-            id="currency-input"
+            className="currency-input"
             value={ currency }
             name="currency"
             onChange={ this.handleChange }
@@ -129,7 +130,7 @@ class WalletForm extends Component {
           {' '}
           <select
             data-testid="method-input"
-            id="method-input"
+            className="method-input"
             value={ method }
             name="method"
             onChange={ this.handleChange }
@@ -144,7 +145,7 @@ class WalletForm extends Component {
           {' '}
           <select
             data-testid="tag-input"
-            id="tag-input"
+            className="tag-input"
             value={ tag }
             name="tag"
             onChange={ this.handleChange }
@@ -159,6 +160,7 @@ class WalletForm extends Component {
         <button
           type="button"
           onClick={ editor ? this.handleEdit : this.handleClick }
+          className="button-addOrEdit"
         >
           {
             editor ? 'Editar despesa' : 'Adicionar despesa'
