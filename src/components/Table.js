@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteExpense, editExpense } from '../redux/actions';
+import '../css/table.css';
+import edit from '../assets/edit.png';
+import deleteIcon from '../assets/delete.png';
 
 class Table extends Component {
   handleDeleteClick = (id) => {
@@ -70,17 +73,22 @@ class Table extends Component {
                     <button
                       type="button"
                       data-testid="edit-btn"
-                      className="edit"
                       id={ id }
                       onClick={ (event) => this.handleEdit(event) }
+                      className="table-button"
                     >
+                      <img src={ edit } alt="edit" />
+                      {' '}
                       Editar
                     </button>
                     <button
                       type="button"
                       data-testid="delete-btn"
                       onClick={ () => this.handleDeleteClick(id) }
+                      className="table-button"
                     >
+                      <img src={ deleteIcon } alt="delete" />
+                      {' '}
                       Excluir
                     </button>
                   </td>
